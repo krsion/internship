@@ -79,7 +79,9 @@ assignment is not fully clear to you - be sure to comment on them.
 
 Use only the Python Standard Library (no numpy etc.) and Python 3.
 
-Create your solution so it runs by `python main.py`. 
+Create your solution so it runs by `python main.py`.
+
+__Note__: Do not include the contents of the `data` directory in your solution, please.  
 
 ## Machine learning competency task
 
