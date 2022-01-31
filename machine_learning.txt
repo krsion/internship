@@ -1,0 +1,40 @@
+TASK 1
+I assume that each picture contains mostly the shoes and I don't need to use object detection to find the shoes.
+
+First for each picture, I use k-means clustering
+features will be R, G, B and rows will be individual pixels.
+I would use the elbow method to get optimal number of clusters
+The biggest cluster is the dominant color of the image.
+
+Now I have dominant color of each picture, which hopefully is color of the shoes.
+
+Now I do k-means on the shoes
+features are R, G, B
+in i-th row is dominant color of i-th picture
+again, use elbow method and now the clusters are the grouping of shoes into colors that we wanted.
+
+
+Advantages - should work
+Disadvantages - sensitive to background color
+
+TASK 2
+I assume that the pictures aren't annotated with the type of the shoe, 
+so similarity in shape would need to be recognized with some object detection I guess 
+and it would still be sensitive to angle from which the shoe was photographed. 
+(and I don't really know much about object detection and deep learning yet)
+So let's say that shoes are similar, if they have similar color.
+
+The simpliest solution will be to run KNN on the new shoe the same way as in TASK 1 to get dominant color 
+and return 10 nearest-neighbors using L2 norm in 3D space (R,G,B)
+where data are the dominant colors of the shoes.
+It is based on KNN algorithm.
+
+Advantages - very simple and straight-forward
+Disadvantages - only based on colors of the picture, could say that black skiing shoes are more similar to black
+     dancing shoes that brown dancing shoes are similar to black dancing shoes.
+     - isn't very smart
+
+
+
+
+
